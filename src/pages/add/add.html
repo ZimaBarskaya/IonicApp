@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar hideBackButton >
+    <ion-buttons start>
+      <button ion-button (click)="cancelClick();">
+        Cancel
+      </button>
+    </ion-buttons>
+    <ion-title>Add new list item</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="doneClick();">
+        Done
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-label class="center">Add new list item</ion-label>
+
+  <ion-item>
+      <ion-input [(ngModel)]="listItemName" type="text" ng-trim="false" maxlength="27" minlength="2"  value="Name"></ion-input>
+  </ion-item>
+     <span class="right">Characters left {{27 - listItemName.length}}</span>
+</ion-content>

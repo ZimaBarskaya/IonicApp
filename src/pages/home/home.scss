@@ -1,0 +1,18 @@
+page-home {
+
+}
+ion-app.ios [padding] .scroll-content {
+    padding: 0;
+}
+button.button[icon-only] {
+  width: 49%;
+margin: 0;
+background: none;
+}
+ion-item-options button {
+
+    padding: 5px 17px;
+}
+ion-content .scroll-content {
+  padding: 0;
+}

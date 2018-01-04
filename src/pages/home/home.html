@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-buttons start>
+      <button ion-button icon-only>
+         <img width="22" height="22" src="assets/imgs/settings.png">
+      </button>
+    </ion-buttons>
+    <ion-title>Groceries</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="nextPage();">
+         <img width="22" height="22" src="assets/imgs/edit.png">
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+
+   <ion-content has-header="true" has-subheader="true" padding="false">
+       <ion-list>
+
+  <ion-item-sliding *ngFor="let item of productList | filter : myFilter">
+  <ion-item-options side="left">
+      <button danger icon-only (click)="cartFilter(item)"><img width="22" height="22" src="assets/imgs/cart.png"></button>
+    </ion-item-options>
+    <ion-item>
+    {{item.name}}
+    </ion-item>
+
+    <ion-item-options>
+      <button danger icon-only (click)="allFilter(item)"> <img width="22" height="22" src="assets/imgs/home.png"></button>
+    </ion-item-options>
+  </ion-item-sliding>
+
+  </ion-list>
+
+   </ion-content>
+
+   <ion-footer>
+  <ion-toolbar>
+
+    <button ion-button icon-only (click)="myFilter = ''">
+      <!--<ion-icon name="ios-list-box"></ion-icon>-->
+      <img width="30" height="22" src="assets/imgs/all-footer.png">
+    </button>
+    <button ion-button icon-only (click)="myFilter = {type: 'cart'}">
+        <img width="30" height="22" src="assets/imgs/footer-cart.png">
+    </button>
+
+  </ion-toolbar>
+</ion-footer>
