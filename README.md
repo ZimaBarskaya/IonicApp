@@ -13,4 +13,8 @@
   <li>Ionic 2</li>
   <li>Angular 5</li>
 </ul>
+<h2>Трудоемкость проекта:</h2>
+<ul>
+  <li><bold>3 часа</bold></li>
+</ul>
  
