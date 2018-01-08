@@ -10,7 +10,7 @@ import { EditPage } from '../edit/edit';
 export class AddPage {
   productList = [];
   filter = "";
-  listItemName = "";
+  listItemName = "Name";
   constructor(public navCtrl: NavController, public navParams: NavParams) {//, public productList: any[], public filter: "", public listItemName: ""
     this.productList = navParams.get('productList');
     this.filter = navParams.get('filter');
