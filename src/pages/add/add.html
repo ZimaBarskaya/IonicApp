@@ -20,7 +20,7 @@
   <ion-label class="center">Add new list item</ion-label>
 
   <ion-item>
-      <ion-input [(ngModel)]="listItemName" type="text" ng-trim="false" maxlength="27" minlength="2"  value="Name"></ion-input>
+      <ion-input [(ngModel)]="listItemName" type="text" ng-trim="false" maxlength="27" minlength="2"  value="{{listItemName}}"></ion-input>
   </ion-item>
      <span class="right">Characters left {{27 - listItemName.length}}</span>
 </ion-content>
