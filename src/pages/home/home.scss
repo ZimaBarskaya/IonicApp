@@ -10,9 +10,14 @@ margin: 0;
 background: none;
 }
 ion-item-options button {
-
-    padding: 5px 17px;
+  padding: 5px 17px;
 }
 ion-content .scroll-content {
   padding: 0;
+}
+.toolbar-content-md {
+    order: 4;
+}
+.toolbar-title-md {
+   text-align: center;
 }
