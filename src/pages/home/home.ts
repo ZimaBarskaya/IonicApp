@@ -73,24 +73,23 @@ export class HomePage {
     }
   }
 
-  myFilter = {type: 'cart'};
+  myFilter = undefined;
 
-ionViewDidLoad() {
-}
     nextPage(){
-      this.navCtrl.push(EditPage, {'productList' : this.productList, "filter" : this.myFilter.type} );
+      if(!this.myFilter.type) {
+        this.navCtrl.push(EditPage, {'productList' : this.productList, "filter" : this.myFilter} );
+      } else {
+        this.navCtrl.push(EditPage, {'productList' : this.productList, "filter" : this.myFilter.type} );
+        console.log(this.myFilter.type);
+      }
     }
     cartFilter(item){
-        if(item.type ==  '') {
           item.type = "cart";
           this.navCtrl.push(HomePage, {'productList' : this.productList} );
-        }
       }
 
       allFilter(item){
-          if(item.type !=  '') {
             item.type = "";
             this.navCtrl.push(HomePage, {'productList' : this.productList} );
-          }
         }
 }
