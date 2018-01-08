@@ -14,16 +14,14 @@ export class AddPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {//, public productList: any[], public filter: "", public listItemName: ""
     this.productList = navParams.get('productList');
     this.filter = navParams.get('filter');
-    if(this.filter == undefined) {
-      this.filter = "";
-    }
   }
   doneClick(){
     this.productList.push({
       type : ""+this.filter,
       name : ""+this.listItemName
     });
-    this.navCtrl.push(HomePage, {'productList' :this.productList });
+    this.filter = "";
+    this.navCtrl.push(HomePage, {'productList' :this.productList, "filter" : this.filter });
   }
 
   cancelClick(){
