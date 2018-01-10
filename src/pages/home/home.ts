@@ -81,9 +81,9 @@ export class HomePage {
 
     nextPage(){
       if(this.myFilter.type !== undefined) {
-        this.navCtrl.push(EditPage, {'productList' : this.productList, "filter" : this.myFilter} );
-      } else {
         this.navCtrl.push(EditPage, {'productList' : this.productList, "filter" : this.myFilter.type} );
+      } else {
+        this.navCtrl.push(EditPage, {'productList' : this.productList, "filter" : this.myFilter} );
         console.log(this.myFilter.type);
       }
     }
@@ -96,7 +96,7 @@ export class HomePage {
       allFilter(item){
             if(item.type !=  '') {
             item.type = "";
-            this.navCtrl.push(HomePage, {'productList' : this.productList, "filter" : {type: 'cart'}  } );
+            this.navCtrl.push(HomePage, {'productList' : this.productList, "filter" 'cart' );
           } else {
               item.type = "";
             this.navCtrl.push(HomePage, {'productList' : this.productList} );
