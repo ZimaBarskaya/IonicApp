@@ -73,7 +73,7 @@ export class HomePage {
     }
   }
 
-  myFilter = undefined;
+  myFilter = '';
 
     nextPage(){
       if(!this.myFilter.type) {
@@ -85,11 +85,13 @@ export class HomePage {
     }
     cartFilter(item){
           item.type = "cart";
+          this.myFilter = 'cart';
           this.navCtrl.push(HomePage, {'productList' : this.productList} );
       }
 
       allFilter(item){
             item.type = "";
+            this.myFilter = 'cart';
             this.navCtrl.push(HomePage, {'productList' : this.productList} );
         }
 }
