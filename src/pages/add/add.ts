@@ -22,7 +22,6 @@ slideOneForm: FormGroup;
   }
   doneClick(){
     if(!this.slideOneForm.valid){
-        console.log("omg");
         $(".error").css("display", "block");
     } else {
       this.productList.push({
