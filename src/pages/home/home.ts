@@ -11,6 +11,7 @@ enableProdMode();
 export class HomePage {
   productList = [];
   filter = "";
+  myFilter = '';
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     if(navParams.get('productList')) {
       this.productList = navParams.get('productList');
@@ -71,9 +72,12 @@ export class HomePage {
 
         ];
     }
+    if(navParams.get('filter') !== undefined) {
+      this.myFilter = navParams.get('filter');
+    }
   }
 
-  myFilter = '';
+ 
 
     nextPage(){
       if(this.myFilter.type !== undefined) {
@@ -90,8 +94,12 @@ export class HomePage {
       }
 
       allFilter(item){
+            if(item.type !=  '') {
             item.type = "";
-            this.myFilter = 'cart';
+            this.navCtrl.push(HomePage, {'productList' : this.productList, "filter" : {type: 'cart'}  } );
+          } else {
+              item.type = "";
             this.navCtrl.push(HomePage, {'productList' : this.productList} );
+          }
         }
 }
