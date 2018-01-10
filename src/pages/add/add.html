@@ -18,9 +18,11 @@
 
 <ion-content padding>
   <ion-label class="center">Add new list item</ion-label>
-
+<form [formGroup]="slideOneForm">
   <ion-item>
-      <ion-input [(ngModel)]="listItemName" type="text" ng-trim="false" maxlength="27" minlength="2"  value="{{listItemName}}"></ion-input>
+        <ion-input name="listItemName" formControlName="listItemName" [(ngModel)]="listItemName" type="text" ng-trim="false"  maxlength="27" minlength="2"  value="{{listItemName}}"></ion-input>
   </ion-item>
+</form>
+<span class="error" style="display: none; color: red">The name is required.</span>
      <span class="right">Characters left {{27 - listItemName.length}}</span>
 </ion-content>
