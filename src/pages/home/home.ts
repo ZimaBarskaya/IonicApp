@@ -76,7 +76,7 @@ export class HomePage {
   myFilter = '';
 
     nextPage(){
-      if(!this.myFilter.type) {
+      if(this.myFilter.type !== undefined) {
         this.navCtrl.push(EditPage, {'productList' : this.productList, "filter" : this.myFilter} );
       } else {
         this.navCtrl.push(EditPage, {'productList' : this.productList, "filter" : this.myFilter.type} );
