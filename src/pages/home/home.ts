@@ -77,7 +77,7 @@ export class HomePage {
     }
   }
 
- 
+
 
     nextPage(){
       if(this.myFilter.type !== undefined) {
@@ -96,7 +96,7 @@ export class HomePage {
       allFilter(item){
             if(item.type !=  '') {
             item.type = "";
-            this.navCtrl.push(HomePage, {'productList' : this.productList, "filter": 'cart' });
+            this.navCtrl.push(HomePage, {'productList' : this.productList, "filter": {type: 'cart'} });
           } else {
               item.type = "";
             this.navCtrl.push(HomePage, {'productList' : this.productList} );
