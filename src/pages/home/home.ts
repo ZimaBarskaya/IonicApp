@@ -96,7 +96,7 @@ export class HomePage {
       allFilter(item){
             if(item.type !=  '') {
             item.type = "";
-            this.navCtrl.push(HomePage, {'productList' : this.productList, "filter" 'cart' );
+            this.navCtrl.push(HomePage, {'productList' : this.productList, "filter": 'cart' });
           } else {
               item.type = "";
             this.navCtrl.push(HomePage, {'productList' : this.productList} );
